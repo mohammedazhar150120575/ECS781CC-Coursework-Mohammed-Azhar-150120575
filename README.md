@@ -1,11 +1,11 @@
 # ECS781CC-Coursework-Mohammed-Azhar-150120575
 Cloud Computing Coursework - Building a RESTful API.
 
+Please also view this README.txt under the RAW tab so that sentences can be spaced as intended. Thank you
 
+# The code below represents the code used in my app.py which is required to connect to the external API, use the Flask framework, jsonify the data obtained and effectively use AWS EC2 instance to exemplify the GET PUT POST DELETE commands required of the Cloud Computing ECS781 coursework to build a prototype of a Cloud Application. #
 
-## The code below represents the code used in my app.py which is required to connect to the external API, use the Flask framework, jsonify the data obtained and effectively use AWS EC2 instance to exemplify the GET PUT POST DELETE commands required of the Cloud Computing ECS781 coursework to build a prototype of a Cloud Application. ##
-
-## The following work has been written by Mohammed Azhar, student 150120575 ##
+# The following work has been written by Mohammed Azhar, student 150120575 #
 
 Below shows the code I have used in my app.py
 ____________________
