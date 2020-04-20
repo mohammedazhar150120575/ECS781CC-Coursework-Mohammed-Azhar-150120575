@@ -7,7 +7,7 @@ Cloud Computing Coursework - Building a RESTful API.
 
 ## The following work has been written by Mohammed Azhar, student 150120575 ##
 
-
+Below shows the code I have used in my app.py
 ____________________
 
 from flask import Flask, request, jsonify
@@ -97,27 +97,27 @@ _____________________
 
 Building a RESTful API.
 
-I.	Log onto the terminal, get into the directory
-II.	Log onto AWS, run EC2 instance on t2.medium, keep security protocols all TCP at 0.0.0.0/0
-III.	Run instance
-IV.	Connect to instance by obtaining the DNS which should look like below
-a.	ssh -i "azhar.pem" ubuntu@ec2-54-83-97-176.compute-1.amazonaws.com
+Log onto the terminal, get into the directory
+Log onto AWS, run EC2 instance on t2.medium, keep security protocols all TCP at 0.0.0.0/0
+Run instance
+Connect to instance by obtaining the DNS which should look like below
+ssh -i "azhar.pem" ubuntu@ec2-54-83-97-176.compute-1.amazonaws.com
 
-V.	Download private key so that you can access your instance as an when necessary, this was saved as Azhar.pem, lab1.pem etc
-VI.	Use private key to connect to cloud server Azhar.pem
-a.	chmod 400 azhar.pem
-b.	ssh -i "azhar.pem" ubuntu@ec2-35-168-20-2.compute-1.amazonaws.com
-c.	sudo apt update
-d.	sudo apt install docker.io
-e.	sudo docker run --name cassandra-**** -p 9042:9042 -d cassandra:latest (pulls the latest Cassandra images)
-f.	sudo docker exec –it Cassandra-azhar cqlsh (This connects to Cassandra, so that we can create our tables with regards to the data we will obtain from the external API’s database the table will have headers ID and Weather)
-g.	CREATE KEYSPACE (tables) (CREATE KEYSPACE ** WITH REPLICATION ={'class' : 'SimpleStrategy', 'replication_factor' : 1})
-h.	CREATE TABLE (tables.stats) (CREATE TABLE **.stats (ID int PRIMARY KEY,Name text);)
-i.	select * from tables.stats; (This line exemplifies the correct creation of the keyspace and table)
-VII.	sudo nano app.py 
-a.	creates the python code to access the api, and input GET, PUT, POST, DELETE commands which are outlined below, it also allows the import of Flask framework, requests etc.
-VIII.	sudo nano Dockerfile
-a.	For the dockerfile we have included the code presented below
+Download private key so that you can access your instance as an when necessary, this was saved as Azhar.pem, lab1.pem etc
+Use private key to connect to cloud server Azhar.pem
+chmod 400 azhar.pem
+ssh -i "azhar.pem" ubuntu@ec2-35-168-20-2.compute-1.amazonaws.com
+sudo apt update
+	sudo apt install docker.io
+	sudo docker run --name cassandra-**** -p 9042:9042 -d cassandra:latest (pulls the latest Cassandra images)
+	sudo docker exec –it Cassandra-azhar cqlsh (This connects to Cassandra, so that we can create our tables with regards to the data we will obtain from the external API’s database the table will have headers ID and Weather)
+	CREATE KEYSPACE (tables) (CREATE KEYSPACE ** WITH REPLICATION ={'class' : 'SimpleStrategy', 'replication_factor' : 1})
+	CREATE TABLE (tables.stats) (CREATE TABLE **.stats (ID int PRIMARY KEY,Name text);)
+	select * from tables.stats; (This line exemplifies the correct creation of the keyspace and table)
+	sudo nano app.py 
+	creates the python code to access the api, and input GET, PUT, POST, DELETE commands which are outlined below, it also allows the import of Flask framework, requests etc.
+	sudo nano Dockerfile
+	For the dockerfile we have included the code presented below
 
 
 
@@ -133,22 +133,20 @@ CMD ["python", "app.py"]
 
 
 
-
-
-IX.	sudo nano requirements.txt
-a.	for the requirements.txt file we have included the code below
+	sudo nano requirements.txt
+	for the requirements.txt file we have included the code below
 
 pip
 Flask
 requests
 cassandra-driver
 
-X.	sudo docker build . --tag=cassandrarest:v1
-a.	builds the python code presented above
-XI.	sudo docker run -p 80:80 cassandrarest:v1
-a.	runs the python code presented above, allows us to now utilise the curl, GET PUT POST DELETE commands that can be run on any terminal.
+	sudo docker build . --tag=cassandrarest:v1
+	builds the python code presented above
+	sudo docker run -p 80:80 cassandrarest:v1
+	runs the python code presented above, allows us to now utilise the curl, GET PUT POST DELETE commands that can be run on any terminal.
 
-XII.	The above two lines run the .py file and allow the website to go live, which can then be edited with GET PUT POST DELETE effectively running a RESTful API
+	The above two lines run the .py file and allow the website to go live, which can then be edited with GET PUT POST DELETE effectively running a RESTful API
 
 
 
